@@ -20,7 +20,7 @@ pipeline {
             steps {
                 sh '''#!/usr/bin/env bash
                 cd app_code
-                docker login -u ${DOCKER_REGISTRY_USERNAME} -p ${DOCKER_REGISTRY_PASSWORD}
+                docker login registry.gitlab.com -u ${DOCKER_REGISTRY_USERNAME} -p ${DOCKER_REGISTRY_PASSWORD}
                 docker build -t"${REGISTRY_NAME}" .
                 docker push "${REGISTRY_NAME}"
                 '''
